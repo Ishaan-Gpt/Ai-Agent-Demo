@@ -1,0 +1,38 @@
+{
+  "name": "ai-agent-marketplace-simulator",
+  "version": "1.0.0",
+  "description": "Full-stack AI Agent Marketplace Simulator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "install-all": "npm install && npm run install-client",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start_agent_runner": "node run_agent.js --agent=agent_social_001 --user=user_001",
+    "start_mock_server": "node mock_agent_server.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "marketplace",
+    "react",
+    "nodejs",
+    "webhooks"
+  ],
+  "author": "AI Agent Marketplace Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

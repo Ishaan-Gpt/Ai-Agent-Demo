@@ -1,0 +1,32 @@
+[
+  {
+    "agent_id": "grammar_correcter_lyzr",
+    "title": "Grammar Corrector",
+    "description": "Automatically corrects grammar and rewrites prompts for clarity using GPT-4o.",
+    "execution_url": "https://agent-prod.studio.lyzr.ai/v3/inference/chat/",
+    "http_method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "x-api-key": "sk-default-sTsNYNkcZj5xIzNBrbJ23X81aHgLmMDu"
+    },
+    "static_fields": {
+      "user_id": "ishaangupta011205@gmail.com",
+      "agent_id": "6856f6ee4d762006fdb4dff6",
+      "session_id": "6856f6ee4d762006fdb4dff6-2im08g5zqgf"
+    },
+    "input_schema": [
+      {
+        "name": "message",
+        "type": "text",
+        "label": "Enter Sentence or Prompt",
+        "placeholder": "e.g. i goes to market"
+      }
+    ],
+    "response_format": "text",
+    "hosted_by": "lyzr",
+    "requires_keys": false,
+    "visibility": "public",
+    "icon": "📝",
+    "category": "Prompt Engineering"
+  }
+]
