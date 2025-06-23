@@ -89,16 +89,21 @@ const ChatInterface = () => {
     setIsLoading(true);
 
     try {
+      // Merge static_fields with the message for chat context
+      const mergedInputs = agent && agent.static_fields
+        ? { ...agent.static_fields, message: inputMessage }
+        : { message: inputMessage };
+
       const response = await axios.post('/api/submit-execution', {
         agent_id: agentId,
         user_id: 'user_001',
-        inputs: { message: inputMessage }
+        inputs: mergedInputs
       });
 
       const agentResponse = {
         id: response.data.execution_id,
         type: 'agent',
-        content: response.data.result?.response || 'I processed your request successfully.',
+        content: response.data.result?.response || response.data.result?.text_output || 'I processed your request successfully.',
         timestamp: new Date().toISOString(),
         executionId: response.data.execution_id
       };
